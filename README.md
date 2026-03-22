@@ -8,7 +8,7 @@ uses: calysto/maintainer_tools/actions/<name>@v1
 
 The `v1` tag always points to the latest stable commit and is updated manually via the [Update v1 Tag](.github/workflows/update-v1-tag.yml) workflow.
 
----
+______________________________________________________________________
 
 ## Actions
 
@@ -31,7 +31,7 @@ Installs Python, Poetry (with OS-keyed cache), `just`, and project dependencies.
     python-version: "3.12"
 ```
 
----
+______________________________________________________________________
 
 ### `enforce-label`
 
@@ -63,7 +63,7 @@ jobs:
       - uses: calysto/maintainer_tools/actions/enforce-label@v1
 ```
 
----
+______________________________________________________________________
 
 ### `release`
 
@@ -99,7 +99,7 @@ Runs `base-setup`, bumps the package version, updates `CHANGELOG.md`, commits th
     ref: ${{ github.ref_name }}
 ```
 
----
+______________________________________________________________________
 
 ### `test-minimum-versions`
 
@@ -121,7 +121,7 @@ Pins all dependencies to their minimum allowed versions (as declared in `pyproje
     command: "just test"
 ```
 
----
+______________________________________________________________________
 
 ### `test-sdist`
 
@@ -143,14 +143,14 @@ Downloads the `Packages` artifact produced by `hynek/build-and-inspect-python-pa
     command: "just test"
 ```
 
----
+______________________________________________________________________
 
 ## Tag Management
 
 The `v1` floating tag is maintained manually. After merging stable changes, run the **Update v1 Tag** workflow from the Actions tab. It will:
 
 1. Delete the existing `v1` tag locally and remotely
-2. Re-create `v1` at the current `HEAD`
-3. Push the updated tag
+1. Re-create `v1` at the current `HEAD`
+1. Push the updated tag
 
 This requires a GitHub App with `contents: write` permission configured in the `release` environment (`APP_ID` variable and `APP_PRIVATE_KEY` secret).
