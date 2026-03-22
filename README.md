@@ -3,7 +3,7 @@
 Reusable GitHub Actions for Calysto packages. All actions are available via the `v1` floating tag:
 
 ```yaml
-uses: calysto/maintainer_tools/.github/actions/<name>@v1
+uses: calysto/maintainer_tools/actions/<name>@v1
 ```
 
 The `v1` tag always points to the latest stable commit and is updated manually via the [Update v1 Tag](.github/workflows/update-v1-tag.yml) workflow.
@@ -26,7 +26,7 @@ Installs Python, Poetry (with OS-keyed cache), `just`, and project dependencies.
 
 ```yaml
 - uses: actions/checkout@v6
-- uses: calysto/maintainer_tools/.github/actions/base-setup@v1
+- uses: calysto/maintainer_tools/actions/base-setup@v1
   with:
     python-version: "3.12"
 ```
@@ -45,7 +45,7 @@ None.
 
 ```yaml
 - uses: actions/checkout@v6
-- uses: calysto/maintainer_tools/.github/actions/enforce-label@v1
+- uses: calysto/maintainer_tools/actions/enforce-label@v1
 ```
 
 Typically used in a workflow triggered on `pull_request` events:
@@ -60,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: calysto/maintainer_tools/.github/actions/enforce-label@v1
+      - uses: calysto/maintainer_tools/actions/enforce-label@v1
 ```
 
 ---
@@ -89,8 +89,8 @@ Bumps the package version, updates `CHANGELOG.md`, commits the changes, creates 
 
 ```yaml
 - uses: actions/checkout@v6
-- uses: calysto/maintainer_tools/.github/actions/base-setup@v1
-- uses: calysto/maintainer_tools/.github/actions/release@v1
+- uses: calysto/maintainer_tools/actions/base-setup@v1
+- uses: calysto/maintainer_tools/actions/release@v1
   with:
     version: ${{ inputs.version }}
     dry_run: "false"
@@ -115,8 +115,8 @@ Pins all dependencies to their minimum allowed versions (as declared in `pyproje
 
 ```yaml
 - uses: actions/checkout@v6
-- uses: calysto/maintainer_tools/.github/actions/base-setup@v1
-- uses: calysto/maintainer_tools/.github/actions/test-minimum-versions@v1
+- uses: calysto/maintainer_tools/actions/base-setup@v1
+- uses: calysto/maintainer_tools/actions/test-minimum-versions@v1
   with:
     command: "just test"
 ```
@@ -137,8 +137,8 @@ Downloads the `Packages` artifact produced by `hynek/build-and-inspect-python-pa
 
 ```yaml
 - uses: actions/checkout@v6
-- uses: calysto/maintainer_tools/.github/actions/base-setup@v1
-- uses: calysto/maintainer_tools/.github/actions/test-sdist@v1
+- uses: calysto/maintainer_tools/actions/base-setup@v1
+- uses: calysto/maintainer_tools/actions/test-sdist@v1
   with:
     command: "just test"
 ```
