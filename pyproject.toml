@@ -5,6 +5,7 @@ name = "maintainer-tools"
 version = "0.1.0.dev0"
 description = "GitHub Actions and tools for Calysto packages"
 authors = [{ name = "Calysto" }]
+readme = "README.md"
 requires-python = ">=3.10"
 classifiers = [
   "Programming Language :: Python :: 3.10",
