@@ -1,12 +1,19 @@
 [tool.poetry]
+
+[project]
 name = "maintainer-tools"
 version = "0.1.0.dev0"
 description = "GitHub Actions and tools for Calysto packages"
-authors = ["Calysto"]
+authors = [{ name = "Calysto" }]
+readme = "README.md"
 requires-python = ">=3.10"
-
-[tool.poetry.dependencies]
-python = ">=3.10"
+classifiers = [
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+]
 
 [tool.poetry.group.dev.dependencies]
 pytest = ">=8.0"
