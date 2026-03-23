@@ -1,6 +1,8 @@
-## 1.0.3
+## 1.1.0
 
-## Bugs Fixed
+## Enhancements Made
 
-- Fix: ignore draft releases when determining fromTag
-  - PR: #13
+- Support user-provided changelog body in release action and workflow
+  - PR: #14
+- Document changelog_body options for multiline release notes
+  - PR: #15
