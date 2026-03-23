@@ -100,10 +100,10 @@ runs:
         echo "IS_PRERELEASE=$IS_PRERELEASE" >> "$GITHUB_ENV"
         if [ "$IS_PRERELEASE" = "true" ]; then
           FROM_TAG=$(gh api "repos/$REPOSITORY/releases" \
-            --jq 'first | .tag_name // ""')
+            --jq '[.[] | select(.draft == false)] | first | .tag_name // ""')
         else
           FROM_TAG=$(gh api "repos/$REPOSITORY/releases" \
-            --jq '[.[] | select(.prerelease == false)] | first | .tag_name // ""')
+            --jq '[.[] | select(.draft == false and .prerelease == false)] | first | .tag_name // ""')
         fi
         echo "FROM_TAG=$FROM_TAG" >> "$GITHUB_ENV"
 
