@@ -1,15 +1,11 @@
-## 1.1.1
+## 1.2.0
 
 ### Enhancements Made
 
-- Enhancement: display inputs and run context in GitHub step summary
-  - PR: #16
+- Enhancement: add test file validation to test-sdist action
+  - PR: #21
 
 ### Maintenance and upkeep improvements
 
-- Enhancement: clean up GitHub step summary output
-  - PR: #17
-- Enhancement: improve changelog header levels and release summary output
-  - PR: #18
-- Fix step summary header levels
-  - PR: #19
+- Fix publish job dry_run handling for schedule trigger
+  - PR: #20
